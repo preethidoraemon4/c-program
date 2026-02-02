@@ -1,0 +1,41 @@
+#include <stdio.h>
+struct Department {
+    int dept_id;
+    char dept_name[30];
+};
+
+
+struct Employee {
+    int emp_id;
+    char emp_name[30];
+    struct Department dept;
+};
+
+int main() {
+    struct Employee e;          
+    struct Employee *ptr;       
+
+    ptr = &e;                   
+
+    
+    printf("Enter Employee ID: ");
+    scanf("%d", &ptr->emp_id);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", ptr->emp_name);
+
+    printf("Enter Department ID: ");
+    scanf("%d", &ptr->dept.dept_id);
+
+    printf("Enter Department Name: ");
+    scanf("%s", ptr->dept.dept_name);
+
+   
+    printf("\n--- Employee Details ---\n");
+    printf("Employee ID   : %d\n", ptr->emp_id);
+    printf("Employee Name : %s\n", ptr->emp_name);
+    printf("Department ID : %d\n", ptr->dept.dept_id);
+    printf("Department    : %s\n", ptr->dept.dept_name);
+
+    return 0;
+}
